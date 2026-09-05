@@ -6,22 +6,39 @@ type ResourceType = 'Notes' | 'Past Questions' | 'Video' | 'Study Guide';
 type Course = { code: string; title: string; faculty: string; department: string; level: string; semester: string; icon: string; resources: ResourceType[] };
 
 const faculties = [
-  'Administration','Agriculture','Arts','Allied Health Sciences','Basic Clinical Sciences','Basic Medical Sciences','Clinical Sciences','Dental Surgery','Education','Engineering','Environmental Design','Law','Life Sciences','Pharmaceutical Sciences','Physical Sciences','Social Sciences','Veterinary Medicine','ABU Business School / Management Sciences'
+  'Faculty of Administration',
+  'Faculty of Agriculture',
+  'Faculty of Arts',
+  'Faculty of Allied Health Sciences',
+  'Faculty of Basic Clinical Sciences',
+  'Faculty of Basic Medical Sciences',
+  'Faculty of Clinical Sciences',
+  'Faculty of Dental Surgery',
+  'Faculty of Education',
+  'Faculty of Engineering',
+  'Faculty of Environmental Design',
+  'Faculty of Law',
+  'Faculty of Life Sciences',
+  'Faculty of Pharmaceutical Sciences',
+  'Faculty of Physical Sciences',
+  'Faculty of Social Sciences',
+  'Faculty of Veterinary Medicine',
+  'ABU Business School / Management Sciences'
 ];
 
 const courses: Course[] = [
-  { code:'LAW 224', title:'Constitutional Law II', faculty:'Law', department:'Public Law', level:'200 Level', semester:'Second Semester', icon:'⚖', resources:['Notes','Past Questions','Study Guide'] },
-  { code:'ECO 202', title:'Principles of Economics II', faculty:'Social Sciences', department:'Economics', level:'200 Level', semester:'Second Semester', icon:'↗', resources:['Notes','Past Questions','Video'] },
-  { code:'ACC 201', title:'Financial Accounting I', faculty:'Administration', department:'Accounting', level:'200 Level', semester:'First Semester', icon:'▣', resources:['Notes','Past Questions','Study Guide'] },
-  { code:'CSC 207', title:'Data Structures', faculty:'Physical Sciences', department:'Computer Science', level:'200 Level', semester:'First Semester', icon:'</>', resources:['Notes','Video','Past Questions'] },
-  { code:'EEE 201', title:'Circuit Theory I', faculty:'Engineering', department:'Electrical Engineering', level:'200 Level', semester:'First Semester', icon:'⌁', resources:['Notes','Past Questions','Video'] },
-  { code:'AGR 201', title:'Crop Production', faculty:'Agriculture', department:'Crop Production', level:'200 Level', semester:'First Semester', icon:'✿', resources:['Notes','Past Questions','Study Guide'] },
-  { code:'BIO 205', title:'Cell Biology', faculty:'Life Sciences', department:'Biological Sciences', level:'200 Level', semester:'Second Semester', icon:'◉', resources:['Notes','Video','Study Guide'] },
-  { code:'EDU 203', title:'Educational Psychology', faculty:'Education', department:'Education', level:'200 Level', semester:'Second Semester', icon:'✦', resources:['Notes','Past Questions','Study Guide'] },
+  { code:'LAW 224', title:'Constitutional Law II', faculty:'Faculty of Law', department:'Public Law', level:'200 Level', semester:'Second Semester', icon:'⚖', resources:['Notes','Past Questions','Study Guide'] },
+  { code:'ECO 202', title:'Principles of Economics II', faculty:'Faculty of Social Sciences', department:'Economics', level:'200 Level', semester:'Second Semester', icon:'↗', resources:['Notes','Past Questions','Video'] },
+  { code:'ACC 201', title:'Financial Accounting I', faculty:'Faculty of Administration', department:'Accounting', level:'200 Level', semester:'First Semester', icon:'▣', resources:['Notes','Past Questions','Study Guide'] },
+  { code:'CSC 207', title:'Data Structures', faculty:'Faculty of Physical Sciences', department:'Computer Science', level:'200 Level', semester:'First Semester', icon:'</>', resources:['Notes','Video','Past Questions'] },
+  { code:'EEE 201', title:'Circuit Theory I', faculty:'Faculty of Engineering', department:'Electrical Engineering', level:'200 Level', semester:'First Semester', icon:'⌁', resources:['Notes','Past Questions','Video'] },
+  { code:'AGR 201', title:'Crop Production', faculty:'Faculty of Agriculture', department:'Crop Production', level:'200 Level', semester:'First Semester', icon:'✿', resources:['Notes','Past Questions','Study Guide'] },
+  { code:'BIO 205', title:'Cell Biology', faculty:'Faculty of Life Sciences', department:'Biological Sciences', level:'200 Level', semester:'Second Semester', icon:'◉', resources:['Notes','Video','Study Guide'] },
+  { code:'EDU 203', title:'Educational Psychology', faculty:'Faculty of Education', department:'Education', level:'200 Level', semester:'Second Semester', icon:'✦', resources:['Notes','Past Questions','Study Guide'] },
 ];
 
 function Logo({ compact=false }: {compact?: boolean}) {
-  return <div className={`brand ${compact ? 'compact':''}`}><div className="brand-mark"><span>∫</span><i>✦</i></div><div><strong>SCHOLARA</strong>{!compact && <small>Your Academic World, One Place.</small>}</div></div>
+  return <div className={`brand ${compact ? 'compact':''}`}><div className="brand-mark"><img src="/scholara-icon.svg" alt="SCHOLARA logo" /></div><div><strong>SCHOLARA</strong>{!compact && <small>Your Academic World, One Place.</small>}</div></div>
 }
 
 export default function Home() {
